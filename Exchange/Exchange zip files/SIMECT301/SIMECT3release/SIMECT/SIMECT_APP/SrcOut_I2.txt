@@ -1,0 +1,2 @@
+V18900 (net98900 0) vsource dc=DcOut8900 type=dc
+V8900 (Vout net98900 net98991 0) vcvs gain=g8900

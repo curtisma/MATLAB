@@ -1,0 +1,28 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "test_i_uni_v_diff"
+  repList "spectre cmos_sch schematic"
+  stopList "spectre ahdl veriloga"
+  globalList "gnd!"
+  hierDelim "."
+  netlistDir "/home/tugui/CADENCE_USERS/AMS_035u_3.7_IC5/Sim/test_i_uni_v_diff/spectre/schematic/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "sigmadelta_local/test_i_uni_v_diff/schematic" "test_i_uni_v_diff" )
+( "sigmadelta_local/simect_i_uni_v_diff_sch/schematic" "simect_i_uni_v_diff_sch" )
+( "gnd!" "0" )
+ )
+( term
+ )
+( param
+ )
+( "test_i_uni_v_diff" "ihnl/cds1/map" )
+( "simect_i_uni_v_diff_sch" "ihnl/cds0/map" )
+ )

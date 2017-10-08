@@ -1,0 +1,22 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  repList "spectre cmos_sch schematic"
+  stopList "spectre ahdl veriloga"
+  hierDelim "."
+ )
+( net
+( "Iout+" "Iout\\+" )
+( "Iout-" "Iout\\-" )
+( "Iin+" "Iin\\+" )
+( "Iin-" "Iin\\-" )
+ )
+( inst
+ )
+( model
+ )
+( term
+ )
+( param
+ )
+ )

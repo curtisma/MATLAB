@@ -1,0 +1,59 @@
+
+// Library name: sigmadelta_local
+// Cell name: simect_i_diff_i_diff_sch
+// View name: schematic
+subckt simect_i_diff_i_diff_sch Iin\+ Iin\- Iout\+ Iout\- Vsupp gnd
+    I0 (Vsupp net35) isource dc=i1-i2 type=dc
+    I1 (Vsupp net85) isource dc=i1-i2 type=dc
+    I2 (Iin\+ gnd) isource dc=i1 type=dc
+    I3 (Iin\- gnd) isource dc=i1 type=dc
+    MP12 (Iout\+ net86 Vsupp Vsupp) modp w=w1*ga*(2-gb) l=l1 \
+        as=1.60225e-11 ad=1.60225e-11 ps=20.55u pd=20.55u nrd=0.0265252 \
+        nrs=0.0265252 ng=1
+    MP11 (net85 net85 Vsupp Vsupp) modp w=2*w1 l=l1 as=2.975e-11 \
+        ad=2.975e-11 ps=36.7u pd=36.7u nrd=0.0142857 nrs=0.0142857 ng=1
+    MP1 (net35 net35 Vsupp Vsupp) modp w=2*w1 l=l1 as=2.975e-11 \
+        ad=2.975e-11 ps=36.7u pd=36.7u nrd=0.0142857 nrs=0.0142857 ng=1
+    MP10 (net59 net85 Vsupp Vsupp) modp w=w1 l=l1 as=1.4875e-11 \
+        ad=1.4875e-11 ps=19.2u pd=19.2u nrd=0.0285714 nrs=0.0285714 ng=1
+    MP0 (Iout\- net88 Vsupp Vsupp) modp w=w1*ga*(2-gb) l=l1 as=1.60225e-11 \
+        ad=1.60225e-11 ps=20.55u pd=20.55u nrd=0.0265252 nrs=0.0265252 \
+        ng=1
+    MP9 (net76 net35 Vsupp Vsupp) modp w=w1 l=l1 as=1.4875e-11 \
+        ad=1.4875e-11 ps=19.2u pd=19.2u nrd=0.0285714 nrs=0.0285714 ng=1
+    Q0 (net35 net79 Iin\+ gnd) npn143h5 area=ar m=1
+    Q1 (net85 net49 Iin\- gnd) npn143h5 area=ar m=1
+    MN8 (Iout\- net59 gnd gnd) modn w=w2*ga*gb l=l2 as=9.3075e-12 \
+        ad=9.3075e-12 ps=12.65u pd=12.65u nrd=0.0456621 nrs=0.0456621 ng=1
+    MN7 (net59 net59 gnd gnd) modn w=w2 l=l2 as=8.925e-12 ad=8.925e-12 \
+        ps=12.2u pd=12.2u nrd=0.047619 nrs=0.047619 ng=1
+    MN2 (Iout\+ net76 gnd gnd) modn w=w2*ga*gb l=l2 as=9.3075e-12 \
+        ad=9.3075e-12 ps=12.65u pd=12.65u nrd=0.0456621 nrs=0.0456621 ng=1
+    MN6 (net76 net76 gnd gnd) modn w=w2 l=l2 as=8.925e-12 ad=8.925e-12 \
+        ps=12.2u pd=12.2u nrd=0.047619 nrs=0.047619 ng=1
+    V2 (net79 gnd) vsource dc=v_bpol type=dc
+    V7 (net49 gnd) vsource dc=v_bpol type=dc
+    R1 (net85 net86) resistor r=r
+    R0 (net88 net35) resistor r=r
+ends simect_i_diff_i_diff_sch
+// End of subcircuit definition.
+
+// Library name: sigmadelta_local
+// Cell name: test_i_diff_i_diff
+// View name: schematic
+V4 (net025 0) vsource type=sine ampl=Isin freq=1/per_tr
+I39 (Vin1 Vin2 Vout1 Vout2 net0106 0) simect_i_diff_i_diff_sch
+V3 (net036 net025) vsource dc=Iin mag=1 type=pulse val0=Imin val1=Imax \
+        period=per_tr width=per_tr/2
+G0 (0 net034 net036 0) vccs gm=g1
+G1 (0 net028 net036 0) vccs gm=g2
+I0 (0 net011) isource dc=iindc type=dc
+E2 (Vout2 net055 net012 0) vcvs gain=g4
+E1 (Vout1 net055 net012 0) vcvs gain=g3
+F5 (0 net028) cccs gain=1 probe=V14
+V1 (Vin1 net034) vsource dc=0 type=dc
+V2 (Vin2 net028) vsource dc=0 type=dc
+V9 (net055 0) vsource dc=voutdc type=dc
+V10 (net012 0) vsource dc=vout mag=1 type=dc
+V0 (net0106 0) vsource dc=Vsupp type=dc
+V14 (net034 net011) vsource dc=0 type=dc

@@ -1,0 +1,4 @@
+parameters gb=0.9738 ga=0.9986 w2=10e-6 w1=15e-6 Vsupp=5 voutdc=2.25 \
+    vout=0 v_bpol=3 r=1510 per_tr=1e-8 l2=0.35e-6 l1=0.35e-6 Isin=0.001 \
+    Imin=0 Imax=0 iindc=0.0001 Iin=0 i2=1.7e-3 i1=3.9e-3 g4=0 g3=0 g2=-1 \
+    g1=1 ar=9.6

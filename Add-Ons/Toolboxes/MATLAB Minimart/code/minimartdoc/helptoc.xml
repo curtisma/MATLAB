@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<toc version="2.0">
+    <tocitem target="MATLAB_Minimart.html">
+        MATLAB Minimart
+        <tocitem target="Getting_Started.html">
+            Getting Started
+            <tocitem target="Getting_Started.html#pageSection_13">
+                Distribution
+            </tocitem>
+            <tocitem target="Getting_Started.html#pageSection_14">
+                System requirements
+            </tocitem>
+            <tocitem target="Getting_Started.html#pageSection_15">
+                Release notes
+            </tocitem>
+        </tocitem>
+        <tocitem target="User_Guide.html">
+            User Guide
+            <tocitem target="User_Guide.html#pageSection_16">
+                Creating a store
+            </tocitem>
+            <tocitem target="User_Guide.html#pageSection_17">
+                Browsing and installing toolboxes from a store
+            </tocitem>
+            <tocitem target="User_Guide.html#pageSection_18">
+                Updating toolboxes from the store
+            </tocitem>
+        </tocitem>
+        <tocitem target="Functions.html">
+            Functions
+            <tocitem target="minimart.installToolbox.html">
+                minimart.installToolbox
+                <tocitem target="minimart.installToolbox.html#syntaxSection">
+                    Syntax
+                </tocitem>
+                <tocitem target="minimart.installToolbox.html#descriptionSection">
+                    Description
+                </tocitem>
+                <tocitem target="minimart.installToolbox.html#InputSection">
+                    Input Arguments
+                </tocitem>
+            </tocitem>
+            <tocitem target="minimart.publishedToolboxes.html">
+                minimart.publishedToolboxes
+                <tocitem target="minimart.publishedToolboxes.html#syntaxSection">
+                    Syntax
+                </tocitem>
+                <tocitem target="minimart.publishedToolboxes.html#descriptionSection">
+                    Description
+                </tocitem>
+                <tocitem target="minimart.publishedToolboxes.html#InputSection">
+                    Input Arguments
+                </tocitem>
+                <tocitem target="minimart.publishedToolboxes.html#OutputSection">
+                    Output Arguments
+                </tocitem>
+            </tocitem>
+            <tocitem target="minimart.buildStore.html">
+                minimart.buildStore
+                <tocitem target="minimart.buildStore.html#syntaxSection">
+                    Syntax
+                </tocitem>
+                <tocitem target="minimart.buildStore.html#descriptionSection">
+                    Description
+                </tocitem>
+                <tocitem target="minimart.buildStore.html#InputSection">
+                    Input Arguments
+                </tocitem>
+            </tocitem>
+            <tocitem target="minimart.showStore.html">
+                minimart.showStore
+                <tocitem target="minimart.showStore.html#syntaxSection">
+                    Syntax
+                </tocitem>
+                <tocitem target="minimart.showStore.html#descriptionSection">
+                    Description
+                </tocitem>
+                <tocitem target="minimart.showStore.html#InputSection">
+                    Input Arguments
+                </tocitem>
+            </tocitem>
+            <tocitem target="minimart.toolboxMetadata.html">
+                minimart.toolboxMetadata
+                <tocitem target="minimart.toolboxMetadata.html#syntaxSection">
+                    Syntax
+                </tocitem>
+                <tocitem target="minimart.toolboxMetadata.html#descriptionSection">
+                    Description
+                </tocitem>
+                <tocitem target="minimart.toolboxMetadata.html#InputSection">
+                    Input Arguments
+                </tocitem>
+                <tocitem target="minimart.toolboxMetadata.html#OutputSection">
+                    Output Arguments
+                </tocitem>
+            </tocitem>
+            <tocitem target="minimart.updateToolboxes.html">
+                minimart.updateToolboxes
+                <tocitem target="minimart.updateToolboxes.html#syntaxSection">
+                    Syntax
+                </tocitem>
+                <tocitem target="minimart.updateToolboxes.html#descriptionSection">
+                    Description
+                </tocitem>
+                <tocitem target="minimart.updateToolboxes.html#InputSection">
+                    Input Arguments
+                </tocitem>
+            </tocitem>
+        </tocitem>
+    </tocitem>
+</toc>

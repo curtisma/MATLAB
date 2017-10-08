@@ -1,0 +1,19 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  repList "spectre cmos_sch schematic"
+  stopList "spectre ahdl veriloga"
+  hierDelim "."
+ )
+( net
+( "gnd!" "0" )
+ )
+( inst
+ )
+( model
+ )
+( term
+ )
+( param
+ )
+ )

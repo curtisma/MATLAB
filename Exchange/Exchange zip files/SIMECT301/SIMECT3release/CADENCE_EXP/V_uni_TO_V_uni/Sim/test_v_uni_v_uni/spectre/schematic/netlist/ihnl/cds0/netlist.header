@@ -1,0 +1,5 @@
+
+// Library name: sigmadelta_local
+// Cell name: simect_v_uni_v_uni_sch
+// View name: schematic
+subckt simect_v_uni_v_uni_sch Vin Vout Vsupp gnd

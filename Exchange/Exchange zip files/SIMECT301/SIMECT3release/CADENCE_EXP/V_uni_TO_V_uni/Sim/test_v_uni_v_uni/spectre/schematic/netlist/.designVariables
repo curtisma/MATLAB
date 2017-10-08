@@ -1,0 +1,2 @@
+parameters Vsin=1 w1=2.5e-5 Vsupp=3.3 Vmin=0 Vmax=0 Vindc=1.5 Vin=0 \
+    per_tr=1e-8 l1=5e-7 ioutdc=0 Iout=0 I0=0.00025 g3=0 g1=1

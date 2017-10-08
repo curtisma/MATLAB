@@ -1,0 +1,34 @@
+#
+analogLib vsin symbol
+V3
+#
+analogLib idc symbol
+I0
+#
+analogLib vccs symbol
+G1
+#
+analogLib vpulse symbol
+V1
+#
+analogLib vcvs symbol
+E0
+#
+sigmadelta_local simect_v_uni_v_uni_sch symbol
+I40
+#
+analogLib vdc symbol
+V19
+V2
+V5
+V0
+#ISCELL
+analogLib gnd symbol
+I41
+I32
+I27
+I34
+I43
+I42
+I2
+I37

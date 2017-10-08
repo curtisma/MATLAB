@@ -1,0 +1,20 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  repList "spectre cmos_sch schematic"
+  stopList "spectre ahdl veriloga"
+  hierDelim "."
+ )
+( net
+( "Vin+" "Vin\\+" )
+( "Vin-" "Vin\\-" )
+ )
+( inst
+ )
+( model
+ )
+( term
+ )
+( param
+ )
+ )

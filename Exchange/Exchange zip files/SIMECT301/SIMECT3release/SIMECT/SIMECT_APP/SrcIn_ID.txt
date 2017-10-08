@@ -1,0 +1,12 @@
+V8980 (Vin1 net98980) vsource dc=0 type=dc
+V8981 (Vin2 net98981) vsource dc=0 type=dc
+V8982 (net98980 net98983) vsource dc=0 type=dc
+V8983 (net98982 net98984) vsource dc=In899 mag=1 type=pulse \
+        val0=TranMin899 val1=TranMax899 period=TranPer899 width=(TranPer899/2)
+V8984 (net98984 0) vsource type=sine sinedc=TranDcSin899 \
+        ampl=TranAmpSin899 freq=1/TranPer899
+I8980 (0 net98983) isource dc=DcIn899 type=dc
+I8981 (0 net98981) cccs gain=1 probe=V8982
+I8982 (0 net98980 net98982 0) vccs gm=g8980
+I8983 (0 net98981 net98982 0) vccs gm=g8981
+

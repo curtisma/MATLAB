@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"MN0v" "MN0"
+"MN0n" "PRIMLIB_nmos4_spectre"
+"I0v" "I0"
+"I0n" "analogLib_idc_spectre"
+"Vinv" ":1"
+"Voutv" ":2"
+"Vsuppv" ":3"
+"gndv" ":4"

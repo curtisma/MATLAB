@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="head\css\0_docstyle.css"/>
+        <link rel="stylesheet" type="text/css" href="head\css\0a_base.css"/>
+        <link rel="stylesheet" type="text/css" href="head\css\10_customDoc.css"/>
+        <link rel="stylesheet" type="text/css" href="head\css\2_site6.css"/>
+        <link rel="stylesheet" type="text/css" href="head\css\2a_site6_offcanvas.css"/>
+        <script type="text/javascript" src="head\scripts\2b_l10n.js">
+        </script>
+        <script type="text/javascript" src="head\scripts\3_docscripts.js">
+        </script>
+        <script type="text/javascript" src="head\scripts\3a_f1help.js">
+        </script>
+        <script type="text/javascript" src="head\scripts\4_docscripts.js">
+        </script>
+        <script type="text/javascript" src="head\scripts\4a_mw.imageanimation.js">
+        </script>
+        <script type="text/javascript" src="head\scripts\5_examples.js">
+        </script>
+        <link rel="stylesheet" type="text/css" href="head\css\7_doc_center.css"/>
+        <link rel="stylesheet" type="text/css" href="head\css\8_doc_center_installed.css"/>
+    </head>
+    <body id="responsive_offcanvas" class="no_animate" style="overflow: hidden;background-color: white;">
+        <div id="content_container" class="content_container" style="border-bottom: 0px;">
+            <div class="container-fluid" style="padding: 0px;">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <section id="doc_center_content" lang="en">
+                            <div itemprop="content" class="ref_sect" id="nameAndDescriptionSection">
+                                <h1 itemprop="title" class="r2016b">
+                                    User Guide
+                                </h1>
+                                <div class="doc_topic_desc">
+                                    <div class="purpose_container mwExpandToggle0">
+                                        <p itemprop="purpose">
+                                            Create and use a store
+                                        </p>
+                                        <div class="switch mwToggle0">
+                                            <a id="expandAllPage" href="javascript:void(0);" data-allexpanded="true1" style="visibility: hidden;">
+                                                collapse all in page
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="title customDocSection" id="pageSection_16">
+                                Creating a store
+                            </h3>
+                            <p class="customDocParagraph">
+                                To create a store:
+                            </p>
+                            <ol>
+                                <li>
+                                    Create a shared file system location accessible to users in your MATLAB community
+                                </li>
+                                <li>
+                                    Deposit toolbox files (<code>.mltbx</code> files) in the shared location
+                                </li>
+                                <li>
+                                    Build the store using <code><a itemprop="url" href="minimart.buildStore.html">minimart.buildStore</a></code>
+                                </li>
+                                <li>
+                                    Check the store using <code><a itemprop="url" href="minimart.showStore.html">minimart.showStore</a></code>
+                                </li>
+                                <li>
+                                    Publicize the location of the store to your MATLAB community
+                                </li>
+                                <li>
+                                    When toolboxes are added, rebuild the store
+                                </li>
+                            </ol>
+                            <p class="customDocParagraph">
+                                MATLAB recognizes that <code>.mltbx</code> files generated from the same <code>.prj</code> file are different versions of the same toolbox, rather than different toolboxes..
+                            </p>
+                            <h3 class="title customDocSection" id="pageSection_17">
+                                Browsing and installing toolboxes from a store
+                            </h3>
+                            <p class="customDocParagraph">
+                                To view a store, use <code><a itemprop="url" href="minimart.showStore.html">minimart.showStore</a></code>. The store home page lists all the toolboxes in the store.
+                            </p>
+                            <p class="listimage">
+                                <img src="PageImages\summary.png">
+                                </img>
+                            </p>
+                            <p class="customDocParagraph">
+                                Each toolbox entry includes a "more info" button to browse details for each version.
+                            </p>
+                            <p class="listimage">
+                                <img src="PageImages\detail.png">
+                                </img>
+                            </p>
+                            <p class="customDocParagraph">
+                                Each toolbox page contains a version dropdown and a "download" button. In the MATLAB help browser, the button initiates the installation of the toolbox. In other browsers, the button initiates the download of the toolbox.
+                            </p>
+                            <h3 class="title customDocSection" id="pageSection_18">
+                                Updating toolboxes from the store
+                            </h3>
+                            <p class="customDocParagraph">
+                                You can use <code><a itemprop="url" href="minimart.updateToolboxes.html">minimart.updateToolboxes</a></code> to update your installed toolboxes to the latest versions from a store. There are three update modes available:
+                            </p>
+                            <ul>
+                                <li>
+                                    Automatic, where toolboxes are automatically upgraded to the latest available versions
+                                </li>
+                                <li>
+                                    Manual, where you are prompted to upgrade or downgrade toolboxes to the latest available versions
+                                </li>
+                                <li>
+                                    Query, where a status report is generated
+                                </li>
+                            </ul>
+                            <p class="customDocParagraph">
+                                You may wish to create a <a href="http://www.mathworks.com/help/matlab/matlab_env/create-matlab-shortcuts-to-rerun-commands.html">shortcut</a> on the MATLAB desktop to provide toolbox updates at the push of a button using <code><a itemprop="url" href="minimart.updateToolboxes.html">minimart.updateToolboxes</a>(store,'auto')</code>.
+                            </p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

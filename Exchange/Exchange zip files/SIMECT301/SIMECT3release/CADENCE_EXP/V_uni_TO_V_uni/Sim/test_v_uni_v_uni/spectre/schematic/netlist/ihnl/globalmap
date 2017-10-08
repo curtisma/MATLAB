@@ -1,0 +1,24 @@
+CADENCE IHNL01060
+$model
+sigmadelta_local/test_v_uni_v_uni/schematic test_v_uni_v_uni
+sigmadelta_local/simect_v_uni_v_uni_sch/schematic simect_v_uni_v_uni_sch
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+ioutdc ioutdc
+w1 w1
+g3 g3
+Vsin Vsin
+Vindc Vindc
+I0 I0
+l1 l1
+Vin Vin
+g1 g1
+Vmax Vmax
+Vsupp Vsupp
+Iout Iout
+per_tr per_tr
+Vmin Vmin
+$endparam

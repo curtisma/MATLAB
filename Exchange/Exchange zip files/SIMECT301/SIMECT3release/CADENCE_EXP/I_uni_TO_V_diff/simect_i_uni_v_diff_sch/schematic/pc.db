@@ -1,0 +1,64 @@
+#
+PRIMLIB npn254h5 ads
+I24
+I20
+I21
+I15
+#
+analogLib cap symbol
+C6
+C0
+#
+analogLib res symbol
+R3
+R2
+R1
+R0
+#
+PRIMLIB nmos4 symbol
+MN8
+MN6
+MN2
+MN7
+#
+PRIMLIB npn143h5 symbol
+Q0
+Q1
+#
+PRIMLIB pmos4 symbol
+MP11
+MP12
+MP0
+MP1
+MP9
+MP10
+#
+analogLib idc ams
+I25
+I23
+I26
+I30
+#
+analogLib idc symbol
+I3
+I2
+I1
+I0
+#
+analogLib vdc symbol
+V7
+V2
+#ISCELL
+analogLib gnd symbol
+I29
+I27
+I22
+#ISCELL
+basic ipin symbol
+PIN3
+PIN1
+PIN0
+#ISCELL
+basic iopin symbolr
+PIN2
+PIN15

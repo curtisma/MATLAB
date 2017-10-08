@@ -1,0 +1,3 @@
+V8900 (Vout net98900) vsource dc=0 type=dc
+I18900 (0 net98900 net98992 0) vccs gm=g8900
+I8900 (0 net98900) isource dc=DcOut8900 type=dc

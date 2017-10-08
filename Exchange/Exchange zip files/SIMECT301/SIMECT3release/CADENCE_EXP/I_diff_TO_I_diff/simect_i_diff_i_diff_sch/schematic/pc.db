@@ -1,0 +1,42 @@
+#
+analogLib idc symbol
+I0
+I1
+I2
+I3
+#
+PRIMLIB pmos4 symbol
+MP12
+MP11
+MP1
+MP10
+MP0
+MP9
+#
+PRIMLIB npn143h5 symbol
+Q0
+Q1
+#
+PRIMLIB nmos4 symbol
+MN8
+MN7
+MN2
+MN6
+#
+analogLib vdc symbol
+V2
+V7
+#
+analogLib res symbol
+R1
+R0
+#ISCELL
+basic ipin symbol
+PIN3
+PIN1
+PIN0
+PIN2
+#ISCELL
+basic iopin symbolr
+PIN15
+PIN14

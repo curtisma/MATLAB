@@ -1,0 +1,7 @@
+V8980 (Vin1 net98980 net98981 0) vcvs gain=g8980
+V8982 (net98980 0) vsource dc=DcIn899 type=dc
+V8983 (net98981 net98982) vsource dc=In899 mag=1 type=pulse \
+        val0=TranMin899 val1=TranMax899 period=TranPer899 width=(TranPer899/2)
+V8984 (net98982 0) vsource type=sine sinedc=TranDcSin899 \
+        ampl=TranAmpSin899 freq=1/TranPer899
+

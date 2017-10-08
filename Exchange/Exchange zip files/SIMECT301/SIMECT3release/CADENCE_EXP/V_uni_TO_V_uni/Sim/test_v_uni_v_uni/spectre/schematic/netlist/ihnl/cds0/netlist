@@ -1,0 +1,5 @@
+    MN0 (Vsupp Vin Vout gnd) modn w=w1 l=l1 as=1.1e-11 ad=1.1e-11 ps=12.2u \
+        pd=12.2u nrd=0.06 nrs=0.06 ng=1
+    I0 (Vout gnd) isource dc=I0 type=dc
+ends simect_v_uni_v_uni_sch
+// End of subcircuit definition.

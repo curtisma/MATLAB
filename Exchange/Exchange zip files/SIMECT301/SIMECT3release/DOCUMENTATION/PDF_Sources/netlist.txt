@@ -1,0 +1,25 @@
+
+// Library name: sigmadelta_local
+// Cell name: simect_v_uni_v_uni_sch
+// View name: schematic
+subckt simect_v_uni_v_uni_sch Vin Vout Vsupp gnd
+    MN0 (Vsupp Vin Vout gnd) modn w=w1 l=l1 as=1.1e-11 ad=1.1e-11 ps=12.2u \
+        pd=12.2u nrd=0.06 nrs=0.06 ng=1
+    I0 (Vout gnd) isource dc=I0 type=dc
+ends simect_v_uni_v_uni_sch
+// End of subcircuit definition.
+
+// Library name: sigmadelta_local
+// Cell name: test_v_uni_v_uni
+// View name: schematic
+V3 (net019 0) vsource type=sine ampl=Vsin freq=1/per_tr
+I0 (0 net015) isource dc=ioutdc type=dc
+G1 (0 net015 net018 0) vccs gm=g3
+V1 (net026 net019) vsource dc=Vin mag=1 type=pulse val0=Vmin val1=Vmax \
+        period=per_tr width=per_tr/2
+E0 (Vin net028 net026 0) vcvs gain=g1
+I40 (Vin Vout net0106 0) simect_v_uni_v_uni_sch
+V19 (net018 0) vsource dc=Iout mag=1 type=dc
+V2 (Vout net015) vsource dc=0 type=dc
+V5 (net028 0) vsource dc=Vindc type=dc
+V0 (net0106 0) vsource dc=Vsupp type=dc

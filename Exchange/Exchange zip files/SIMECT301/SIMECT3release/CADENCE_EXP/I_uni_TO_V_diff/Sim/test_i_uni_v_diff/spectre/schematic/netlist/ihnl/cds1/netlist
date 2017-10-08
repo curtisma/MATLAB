@@ -1,0 +1,21 @@
+
+// Library name: sigmadelta_local
+// Cell name: test_i_uni_v_diff
+// View name: schematic
+F5 (0 net027) cccs gain=1 probe=V20
+I42 (Vin Vout1 Vout2 net0106 0) simect_i_uni_v_diff_sch
+V4 (net025 0) vsource type=sine ampl=Isin freq=1/per_tr
+V23 (net036 net025) vsource dc=Iin mag=1 type=pulse val0=Imin val1=Imax \
+        period=per_tr width=per_tr/2
+G0 (0 net034 net036 0) vccs gm=g1
+G1 (0 net045 net046 0) vccs gm=g3
+G2 (0 net027 net046 0) vccs gm=g4
+I1 (0 net051) isource dc=ioutdc type=dc
+I0 (0 net011) isource dc=iindc type=dc
+V20 (net045 net051) vsource dc=0 type=dc
+V1 (Vin net034) vsource dc=0 type=dc
+V19 (net046 0) vsource dc=Iout mag=1 type=dc
+V2 (Vout1 net045) vsource dc=0 type=dc
+V3 (Vout2 net027) vsource dc=0 type=dc
+V0 (net0106 0) vsource dc=Vsupp type=dc
+V14 (net034 net011) vsource dc=0 type=dc

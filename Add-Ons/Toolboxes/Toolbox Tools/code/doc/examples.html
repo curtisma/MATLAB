@@ -1,0 +1,78 @@
+<link href="css/bootstrap.min.css" rel="StyleSheet" type="text/css">
+<link href="css/doc_center.css" rel="StyleSheet" type="text/css"/>
+<meta author="The MathWorks Ltd."/>
+<meta copyright="2016 The MathWorks Ltd."/>
+
+<style>
+code {
+    font-family: monospace;
+    color: black
+}
+</style>
+
+<section id="doc_center_content" lang="en">
+    <div id="pgtype-topic">
+        <span class="anchor_target" id="top"> </span>
+        <h2 class="title r2016b" id="top" itemprop="title content">Examples</h2>
+        <div itemprop="content">
+            <p>Once 'Toolbox Tools' is installed, run the following command in the MATLAB Command Window:</p>
+                <p><code><a href="matlab:mksandbox( 'mytoolbox' )">mksandbox( 'mytoolbox' )</a></code></p>                    
+                <p>This creates a sandbox for a MATLAB toolbox named 'mytoolbox'. You can also specify the sandbox location as follows:</p>
+                <p><code><a href="matlab:mksandbox( 'mytoolbox', 'C:\Work\Toolboxes' )">mksandbox( 'mytoolbox', 'C:\Work\Toolboxes' )</a></code></p>
+                <p>After the sandbox has been created, run <code> release( 'mytoolbox' )</code> to package the toolbox.</p>
+        </div>
+        
+        <h3 class="title r2016b" id="top" itemprop="title content">Customising sandbox content</h3>
+        <div itemprop="content">
+            <p>The sandbox created contains a number of MATLAB files to get you started on building your own toolbox. You can customise the content as described below.</p>                
+        </div>
+        
+        <h4 class="title r2016b" id="top" itemprop="title content">Project file</h4>
+        <div itemprop="content">
+            <p>The project file <code>mytoolbox.prj </code> contains information about the toolbox and is used for packaging the <code>.mltbx </code> file.
+            Specify toolbox metadata, i.e. author information, toolbox summary, description, and image, code, documentation, apps, and examples to be included in the packaged toolbox.</p>
+        </div>
+        
+        <h4 class="title r2016b" id="top" itemprop="title content">Shipping toolbox files</h4>
+        <div itemprop="content">
+            <p>The <code>/tbx </code> folder contains code and documentation to be released to end users. The <code>/tbx/mytoolbox </code> folder contains the toolbox code, i.e. <code>MyClass.m </code> and <code>myfunc.m</code>, and a <code>Contents.m</code> file summarising the MATLAB files in the folder.
+            <br>
+            This enables users to query content and version information of the toolbox using the <a href="matlab:doc( 'help' )"> help </a> or <a href="matlab:doc( 'ver' )"> ver </a> commands. See <a href="matlab:web([docroot, '/matlab/matlab_prog/create-a-help-summary-contents-m.html'])"> Create Help Summary Files </a> on how to create a <code>Contents.m</code> file.</p>
+
+            <p>The <code>/tbx/doc </code> folder contains supporting documentation or tutorials to demonstrate the toolbox functionalities.  To <a href="matlab:web([docroot, '/matlab/matlab_prog/display-custom-documentation.html'])"> display custom documentation </a> in the MATLAB Help browser, the toolbox should include an <code>info.xml </code>and <code>helptoc.xml  </code> file. 
+            You can also include <a href="matlab:web([docroot, '/matlab/matlab_prog/display-custom-examples.html'])"> custom examples </a> in the toolbox and these example files should be stored under the <code>/tbx/doc/examples </code> folder. </p>    
+        </div>
+        
+        <h4 class="title r2016b" id="top" itemprop="title content">Tests</h4>
+        <div itemprop="content">
+            <p>The <code>/tests </code> folder contains tests for your toolbox files. An example test file <code> MyTest.m </code> is provided to demonstrate how to write <a href="matlab:web([docroot, '//matlab/class-based-unit-tests.html'])"> Class-Based Unit Tests </a> using the <a href="matlab:web([docroot, '/matlab/matlab-unit-test-framework.html'])"> MATLAB Unit Test Framework </a>.
+        </div>
+        
+        <h4 class="title r2016b" id="top" itemprop="title content">The <code>addsandbox.m </code> and <code> rmsandbox.m </code> scripts </h4>
+        <div itemprop="content"> 
+            <p>These files are used to automate the configuration of the MATLAB environment for development, packaging and testing.</p>
+            <p>When writing and packaging your toolbox, you want the sandbox code to be on your MATLAB path. The <code> addsandbox.m </code> script adds the <code>/tbx </code> folder and all its subfolders to the MATLAB path when executed. You should customise this to your own development environment.</p>
+            <p>When testing the packaged <code> .mltbx </code> file, it is important that the sandbox code is removed from the MATLAB path. Similarly, the <code> rmsandbox.m </code> script removes the <code>/tbx </code> folder and all its subfolders from the MATLAB path when executed. Again, you should customise this script to your development environment.</p>
+        </div>
+        
+        <h4 class="title r2016b" id="top" itemprop="title content"> The <code>release.m </code> script</h4>
+        <div itemprop="content"> 
+            <p>An example <code> release.m </code> script is provided to automate the toolbox release process. This script:
+                <ul>
+                    <li>runs checks for the correct MATLAB version and dependencies, </li>
+                    <li>generates documentation and publishing examples, </li>
+                    <li>runs tests, and</li> 
+                    <li>packages the toolbox.</li>
+                </ul>
+            </p>
+            <p>You should customise this file to your toolbox release process.</p>
+        </div>
+        
+        <h4 class="title r2016b" id="top" itemprop="title content">An archive of all toolbox releases</h4>
+        <div itemprop="content"> 
+            <p>All toolbox releases should be archived in the <code>/releases </code> folder for ease of reference. Each toolbox release should be annotated with the correct version number.
+            This is automated in the example <code> release.m </code> script provided. </p>
+        </div>
+        
+    </div>
+</section>

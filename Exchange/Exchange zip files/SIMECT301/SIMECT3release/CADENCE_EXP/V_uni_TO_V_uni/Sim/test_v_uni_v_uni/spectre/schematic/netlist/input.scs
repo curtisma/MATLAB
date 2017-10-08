@@ -1,0 +1,53 @@
+// Generated for: spectre
+// Generated on: Oct 26 17:24:23 2010
+// Design library name: sigmadelta_local
+// Design cell name: test_v_uni_v_uni
+// Design view name: schematic
+simulator lang=spectre
+global 0
+include "/home/ic5.1/tools/dfII/samples/artist/ahdlLib/quantity.spectre"
+parameters Vsin=1 w1=2.5e-5 Vsupp=3.3 Vmin=0 Vmax=0 Vindc=1.5 Vin=0 \
+    per_tr=1e-8 l1=5e-7 ioutdc=0 Iout=0 I0=0.00025 g3=0 g1=1
+include "/home/AMS_3.70/spectre/s35/mcparams.scs"
+include "/home/AMS_3.70/spectre/s35/cmos53.scs" section=cmostm
+include "/home/AMS_3.70/spectre/s35/res.scs" section=restm
+include "/home/AMS_3.70/spectre/s35/cap.scs" section=captm
+include "/home/AMS_3.70/spectre/s35/vbic.scs" section=biptm
+include "/home/AMS_3.70/spectre/s35/ind.scs" section=indtm
+
+// Library name: sigmadelta_local
+// Cell name: simect_v_uni_v_uni_sch
+// View name: schematic
+subckt simect_v_uni_v_uni_sch Vin Vout Vsupp gnd
+    MN0 (Vsupp Vin Vout gnd) modn w=w1 l=l1 as=1.1e-11 ad=1.1e-11 ps=12.2u \
+        pd=12.2u nrd=0.06 nrs=0.06 ng=1
+    I0 (Vout gnd) isource dc=I0 type=dc
+ends simect_v_uni_v_uni_sch
+// End of subcircuit definition.
+
+// Library name: sigmadelta_local
+// Cell name: test_v_uni_v_uni
+// View name: schematic
+V3 (net019 0) vsource type=sine ampl=Vsin freq=1/per_tr
+I0 (0 net015) isource dc=ioutdc type=dc
+G1 (0 net015 net018 0) vccs gm=g3
+V1 (net026 net019) vsource dc=Vin mag=1 type=pulse val0=Vmin val1=Vmax \
+        period=per_tr width=per_tr/2
+E0 (Vin net028 net026 0) vcvs gain=g1
+I40 (Vin Vout net0106 0) simect_v_uni_v_uni_sch
+V19 (net018 0) vsource dc=Iout mag=1 type=dc
+V2 (Vout net015) vsource dc=0 type=dc
+V5 (net028 0) vsource dc=Vindc type=dc
+V0 (net0106 0) vsource dc=Vsupp type=dc
+simulatorOptions options reltol=100e-6 vabstol=1e-6 iabstol=1e-12 temp=27 \
+    tnom=27 homotopy=all limit=delta scalem=1.0 scale=1.0 \
+    compatible=spice2 gmin=1e-12 rforce=1 maxnotes=5 maxwarns=5 digits=5 \
+    cols=80 pivrel=1e-3 sensfile="../psf/sens.output" checklimitdest=psf 
+tran tran stop=100n errpreset=conservative write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts  where=rawfile
+save E0:p 
+saveOptions options save=allpub

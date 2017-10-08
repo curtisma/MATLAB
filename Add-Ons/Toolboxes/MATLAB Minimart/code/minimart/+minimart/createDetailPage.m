@@ -1,0 +1,139 @@
+function createDetailPage( filename, toolbox )
+%createDetailPage  Create detail page
+%
+%  minimart.createDetailPage(f,t) creates a detail page for toolbox
+%  versions t at the filename f.
+
+%  Copyright 2016 The MathWorks, Inc.
+%  $Revision: 211 $ $Date: 2015-08-12 08:29:30 +0100 (Wed, 12 Aug 2015) $
+
+% Constants
+title = toolbox(1).Name;
+
+% Extract folder from filename
+folder = fileparts( filename );
+
+% Create the toolbox tile
+tile = createToolboxTile( folder, toolbox );
+
+% Fill in template
+package = fileparts( mfilename( 'fullpath' ) );
+resources = fullfile( package, '..', 'resources' );
+s = fileread( fullfile( resources, 'template.html' ) );
+s = strrep( s, '<!-- title -->', title );
+s = strrep( s, '<!-- content -->', tile );
+
+% Write to file
+f = fopen( filename, 'w+' );
+fileCleanUp = onCleanup( @() fclose( f ) );
+fprintf( f, '%s', s );
+
+end % createDetailPage
+
+function tile = createToolboxTile( folder, toolbox )
+%createToolboxTile  Create detail card for one toolbox
+%
+%  s = createToolboxTile(f,t) creates a detail tile for the toolbox t for
+%  the folder f.
+
+% Create
+hiddenContent = '';
+% Base elements
+for i = 1:numel( toolbox )
+    % Thumbnail
+    imageName = sprintf( '%s-%s.png', toolbox(i).Guid, toolbox(i).Version );
+    ss = toolbox(i).Screenshot;
+    minimart.pngwrite( ss.cdata, ss.map, ss.alpha, fullfile( folder, 'images', imageName ) );
+    versionThumbnail = sprintf([...
+        '<div id="thumbnailV%s">\n'...
+        '    <img src="images/%s" alt="thumbnail"/>\n'...
+        '</div>\n'],...
+        toolbox(i).Version, imageName );
+    if i == 1
+        toolboxThumbnail = sprintf(...
+            ['<div class="toolboxThumbnail">\n'...
+            '    %s\n'...
+            '</div>\n'],...
+            versionThumbnail );
+    else
+        hiddenContent = [hiddenContent versionThumbnail]; %#ok<AGROW>
+    end
+    % Summary
+    versionSummary = sprintf([...
+        '<p id="summaryV%s">\n'...
+        '    %s\n'...
+        '</p>\n'],...
+        toolbox(i).Version, toolbox(i).Summary );
+    if i == 1
+        summaryContainer = sprintf([...
+            '<div id="summaryContainer">\n'...
+            '    %s\n'...
+            '</div>\n'],...
+            versionSummary );
+    else
+        hiddenContent = [hiddenContent versionSummary]; %#ok<AGROW>
+    end
+    % Description
+    if ishtml( toolbox(i).Description )
+        versionDescription = sprintf(...
+            '<div id="descriptionV%s">%s</div>\n',...
+            toolbox(i).Version, toolbox(i).Description );
+    else
+        versionDescription = sprintf(...
+            '<div id="descriptionV%s" style="white-space: pre-wrap;">%s</div>\n',...
+            toolbox(i).Version, toolbox(i).Description );
+    end
+    if i == 1
+        descriptionContainer = sprintf([...
+            '<div class="descriptionContainer">\n'...
+            '    %s\n'...
+            '</div>\n'],...
+            versionDescription );
+    else
+        hiddenContent = [hiddenContent versionDescription]; %#ok<AGROW>
+    end
+end
+% Controls
+versionOptions = cellfun(...
+    @(version, fileName) ['<option value="' getFileName( fileName ) '" name="' version '">' version '</option>'],...
+    {toolbox.Version}, {toolbox.Filename},...
+    'UniformOutput', false );
+versionSelect = sprintf([...
+    '<select class="btn btn_secondary" onchange="versionChanged();" id="versionSelector">\n'...
+    '    %s\n'...
+    '</select>\n'], sprintf( '%s', versionOptions{:} ) );
+downloadButton = '<a class="btn btn_secondary" id="downloadButton" href="javascript: downloadToolbox();">Download</a>';
+downloadControls = sprintf(...
+    ['<div class="downloadControls">\n'...
+    '    %s<br/>%s\n'...
+    '</div>\n'], versionSelect, downloadButton );
+% Assemble header
+toolboxHeader = sprintf(...
+    ['<div class="toolboxHeader">\n'...
+    '    %s\n'...
+    '    %s\n'...
+    '    <div class="toolboxNameAndSummary"><h1>%s</h1>%s</div>\n'...
+    '</div>\n'],...
+    toolboxThumbnail, downloadControls, toolbox(1).Name, summaryContainer );
+
+tile = sprintf([...
+    '<div class="toolboxCard col-sm-12">%s%s</div>\n'...
+    '<div class="hiddenContainer col-sm-12">%s</div>\n'],...
+    toolboxHeader, descriptionContainer, hiddenContent );
+
+end % createToolboxTile
+
+function fileName = getFileName( fullFileName )
+[~,fileName,fileExt] = fileparts( fullFileName );
+fileName = [fileName fileExt];
+end
+
+function decision = ishtml( description )
+%ishtml  Check for HTML
+%
+%  tf = ishtml(s) returns true if the string s contains HTML tags, and
+%  false otherwise.
+
+decision = ~isempty( regexp( description, '<[a-z]+>', 'once' ) );
+
+end % ishtml

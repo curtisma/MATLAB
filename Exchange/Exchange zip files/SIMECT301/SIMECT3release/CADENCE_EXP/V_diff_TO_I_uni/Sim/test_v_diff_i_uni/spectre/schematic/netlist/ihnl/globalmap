@@ -1,0 +1,27 @@
+CADENCE IHNL01060
+$model
+sigmadelta_local/test_v_diff_i_uni/schematic test_v_diff_i_uni
+sigmadelta_local/simect_v_diff_i_uni_sch/schematic simect_v_diff_i_uni_sch
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+w1 w1
+g3 g3
+Vsin Vsin
+Vindc Vindc
+I0 I0
+voutdc voutdc
+l1 l1
+vout vout
+Vin Vin
+g1 g1
+g2 g2
+l2 l2
+Vmax Vmax
+Vsupp Vsupp
+w2 w2
+per_tr per_tr
+Vmin Vmin
+$endparam

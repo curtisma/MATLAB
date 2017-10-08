@@ -1,0 +1,46 @@
+    I24 (net0176 net0238 gnd gnd) npn254h5 area=area1 m=1
+    I20 (Vsupp net0188 Vout\- 0) npn254h5 area=area2 m=1
+    I21 (Vsupp net0176 Vout\+ 0) npn254h5 area=area2 m=1
+    I15 (net0188 net043 0 0) npn254h5 area=area1 m=1
+    C6 (net043 Vout\-) capacitor c=c
+    C0 (net0238 Vout\+) capacitor c=c
+    R3 (net0238 Vout\+) resistor r=r2
+    R2 (net043 Vout\-) resistor r=r1
+    R1 (net062 net070) resistor r=r
+    R0 (net037 net0103) resistor r=r
+    MN8 (net0238 net038 gnd gnd) modn w=w2*ga*gb l=l2 as=9.3075e-12 \
+        ad=9.3075e-12 ps=12.65u pd=12.65u nrd=0.0456621 nrs=0.0456621 ng=1
+    MN6 (net051 net051 gnd gnd) modn w=w2 l=l2 as=8.925e-12 ad=8.925e-12 \
+        ps=12.2u pd=12.2u nrd=0.047619 nrs=0.047619 ng=1
+    MN2 (net043 net051 gnd gnd) modn w=w2*ga*gb l=l2 as=9.3075e-12 \
+        ad=9.3075e-12 ps=12.65u pd=12.65u nrd=0.0456621 nrs=0.0456621 ng=1
+    MN7 (net038 net038 gnd gnd) modn w=w2 l=l2 as=8.925e-12 ad=8.925e-12 \
+        ps=12.2u pd=12.2u nrd=0.047619 nrs=0.047619 ng=1
+    Q0 (net0103 net0112 Iin gnd) npn143h5 area=ar m=1
+    Q1 (net062 net0172 net092 gnd) npn143h5 area=ar m=1
+    MP11 (net062 net062 Vsupp Vsupp) modp w=2*w1 l=l1 as=2.975e-11 \
+        ad=2.975e-11 ps=36.7u pd=36.7u nrd=0.0142857 nrs=0.0142857 ng=1
+    MP12 (net043 net070 Vsupp Vsupp) modp w=w1*ga*(2-gb) l=l1 \
+        as=1.60225e-11 ad=1.60225e-11 ps=20.55u pd=20.55u nrd=0.0265252 \
+        nrs=0.0265252 ng=1
+    MP0 (net0238 net037 Vsupp Vsupp) modp w=w1*ga*(2-gb) l=l1 \
+        as=1.60225e-11 ad=1.60225e-11 ps=20.55u pd=20.55u nrd=0.0265252 \
+        nrs=0.0265252 ng=1
+    MP1 (net0103 net0103 Vsupp Vsupp) modp w=2*w1 l=l1 as=2.975e-11 \
+        ad=2.975e-11 ps=36.7u pd=36.7u nrd=0.0142857 nrs=0.0142857 ng=1
+    MP9 (net051 net0103 Vsupp Vsupp) modp w=w1 l=l1 as=1.4875e-11 \
+        ad=1.4875e-11 ps=19.2u pd=19.2u nrd=0.0285714 nrs=0.0285714 ng=1
+    MP10 (net038 net062 Vsupp Vsupp) modp w=w1 l=l1 as=1.4875e-11 \
+        ad=1.4875e-11 ps=19.2u pd=19.2u nrd=0.0285714 nrs=0.0285714 ng=1
+    I25 (Vout\+ gnd) isource dc=i4 type=dc
+    I23 (Vsupp net0188) isource dc=i3 type=dc
+    I26 (Vsupp net0176) isource dc=i3 type=dc
+    I30 (Vout\- gnd) isource dc=i4 type=dc
+    I3 (net092 gnd) isource dc=i1 type=dc
+    I2 (Iin gnd) isource dc=i1 type=dc
+    I1 (Vsupp net062) isource dc=i1-i2 type=dc
+    I0 (Vsupp net0103) isource dc=i1-i2 type=dc
+    V7 (net0172 gnd) vsource dc=v_bpol type=dc
+    V2 (net0112 gnd) vsource dc=v_bpol type=dc
+ends simect_i_uni_v_diff_sch
+// End of subcircuit definition.

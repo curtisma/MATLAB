@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      tugui
+HostName                       bercy.supelec.fr
+ProcessIdentifier              28204
+ProcessCreationTime_UTC        1288102478
+ProcessCreationTime_Readable   Tue Oct 26 16:14:38 2010 CEST
+AppIdentifier                  /home/ic5.1/tools/dfII/bin/icfb.exe
+OSType                         lnx86
+ReasonForPlacingEditLock       XXsave write lock
+FilePathUsedToEditLock         /home/tugui/CADENCE_USERS/AMS_035u_3.7_IC5/sigmadelta_local/test_v_uni_v_uni/schematic/sch.cdb
+TimeEditLocked                 Tue Oct 26 16:18:01 2010 CEST

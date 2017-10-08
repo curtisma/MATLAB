@@ -1,0 +1,22 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  repList "spectre cmos_sch schematic"
+  stopList "spectre ahdl veriloga"
+  hierDelim "."
+ )
+( net
+( "Vout-" "Vout\\-" )
+( "Vout+" "Vout\\+" )
+( "gnd!" "0" )
+ )
+( inst
+ )
+( model
+( "simect_i_uni_v_diff_sch" "simect_i_uni_v_diff_sch" )
+ )
+( term
+ )
+( param
+ )
+ )

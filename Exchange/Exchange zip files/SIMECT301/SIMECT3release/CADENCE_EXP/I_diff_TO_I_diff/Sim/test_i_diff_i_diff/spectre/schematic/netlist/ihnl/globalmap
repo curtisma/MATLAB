@@ -1,0 +1,36 @@
+CADENCE IHNL01060
+$model
+sigmadelta_local/simect_i_diff_i_diff_sch/schematic simect_i_diff_i_diff_sch
+sigmadelta_local/test_i_diff_i_diff/schematic test_i_diff_i_diff
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+Imin Imin
+gb gb
+w1 w1
+g3 g3
+ga ga
+i1 i1
+Iin Iin
+Itr_max Itr_max
+r r
+voutdc voutdc
+iindc iindc
+v_bpol v_bpol
+l1 l1
+Isin Isin
+vout vout
+Imax Imax
+g1 g1
+g2 g2
+l2 l2
+Vsupp Vsupp
+Itr_min Itr_min
+w2 w2
+g4 g4
+ar ar
+per_tr per_tr
+i2 i2
+$endparam

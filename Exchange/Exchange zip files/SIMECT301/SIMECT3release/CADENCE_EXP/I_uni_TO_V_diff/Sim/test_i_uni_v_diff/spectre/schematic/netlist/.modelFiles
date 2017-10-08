@@ -1,0 +1,6 @@
+include "/home/AMS_3.70/spectre/s35/mcparams.scs"
+include "/home/AMS_3.70/spectre/s35/cmos53.scs" section=cmostm
+include "/home/AMS_3.70/spectre/s35/res.scs" section=restm
+include "/home/AMS_3.70/spectre/s35/cap.scs" section=captm
+include "/home/AMS_3.70/spectre/s35/vbic.scs" section=biptm
+include "/home/AMS_3.70/spectre/s35/ind.scs" section=indtm

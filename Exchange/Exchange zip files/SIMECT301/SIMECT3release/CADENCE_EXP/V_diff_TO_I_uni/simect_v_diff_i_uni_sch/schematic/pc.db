@@ -1,0 +1,20 @@
+#
+PRIMLIB nmos4 symbol
+MN1
+MN0
+#
+analogLib idc symbol
+I0
+#
+PRIMLIB pmos4 symbol
+MN2
+MP0
+#ISCELL
+basic ipin symbol
+PIN5
+PIN2
+PIN1
+PIN3
+#ISCELL
+basic opin symbol
+PIN0

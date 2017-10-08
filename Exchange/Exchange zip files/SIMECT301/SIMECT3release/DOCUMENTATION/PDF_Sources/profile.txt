@@ -1,0 +1,16 @@
+
+	
+#matlab
+	export PATH=$PATH:/home/matlab/bin
+     
+# spectre MMSIM7.2ls  
+	export SPECTRE_FEATURE_FILE=/home/mmsim/tools/spectre/etc/files/spectre.dat
+	export PATH=$PATH:/home/mmsim/tools/bin
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/mmsim/tools/lib/64bit
+
+# IC_6.1
+	export IC_INST_DIR=/home/ic6.1
+	export CDS_ROOT=/home/ic6.1      
+	export CDSDIR=/home/ic6.1
+	export CDS_INST_DIR=/home/ic6.1
+	export PATH=$PATH:$CDS_ROOT/tools/bin:$CDS_ROOT/tools/dfII/bin:$CDS_ROOT/tools/plot/bin:$CDS_ROOT/tools/dracula/bin
